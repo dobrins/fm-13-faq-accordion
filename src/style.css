@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  /* FONTS */
+  --font-regular: 400;
+  --font-semibold: 600;
+  --font-bold: 700;
+  /* COLORS */
+  --black: hsl(0 0% 0%);
+  --white: hsl(0 0% 100%);
+  --purple-100: hsl(275, 100%, 97%);
+  --purple-600: hsl(292, 16%, 49%);
+  --purple-950: hsl(292, 42%, 14%);
+  --violet-600: hsl(281, 83%, 54%);
+  /* SIZES */
+  --space-0: 0; /* 0x */
+  --space-12: 0.0625rem; /* 1px */
+  --space-25: 0.125rem; /* 2px */
+  --space-50: 0.25rem; /* 4px */
+  --space-100: 0.5rem; /* 8px */
+  --space-125: 0.625rem; /* 10px */
+  --space-150: 0.75rem; /* 12px */
+  --space-175: 0.875rem; /* 14px */
+  --space-200: 1rem; /* 16px */
+  --space-225: 1.125rem; /* 18px */
+  --space-250: 1.25rem; /* 20px */
+  --space-300: 1.5rem; /* 24px */
+  --space-400: 2rem; /* 32px */
+  --space-500: 2.5rem; /* 40px */
+  --space-600: 3rem; /* 48px */
+  --space-650: 3.25rem; /* 52px */
+  --space-700: 3.5rem; /* 56px */
+  --space-750: 3.75rem; /* 60px */
+  --space-800: 4rem; /* 64px */
+  --space-900: 4.5rem; /* 72px */
+  --space-1000: 5rem; /* 80px */
+  --space-1100: 5.5rem; /* 88px */
+  --space-1200: 6rem; /* 96px */
+  --space-1300: 6.5rem; /* 104px */
+  --space-1400: 7rem; /* 112px */
+  --space-1500: 7.5rem; /* 120px */
+  --space-1600: 8rem; /* 128px */
+}
+
+/* Media Queries */
+/* Typography */
+body {
+  font-size: var(--space-200);
+  font-weight: var(--font-regular);
+  line-height: 1.5;
+  font-family: "Work Sans", sans-serif;
+  color: var(--purple-950);
+  background-color: var(--purple-100);
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-optical-sizing: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: currentcolor;
+}
+a:focus-visible {
+  outline: 0;
+}
+
+.faq {
+  max-width: 37.5rem;
+  padding: var(--space-500);
+  border-radius: var(--space-200);
+  background-color: var(--white);
+  box-shadow: 0 0 var(--space-700) hsla(281, 100%, 23%, 0.1);
+}
+@media (width <= 40em) {
+  .faq {
+    padding: var(--space-300);
+  }
+}
+.faq h1 {
+  font-size: var(--space-700);
+  font-weight: var(--font-bold);
+  line-height: 1.18;
+  display: flex;
+  gap: var(--space-300);
+  align-items: center;
+}
+@media (width <= 40em) {
+  .faq h1 {
+    font-size: 2rem;
+  }
+}
+.faq h1::before {
+  content: "";
+  background-image: url("/icon-star.svg");
+  background-repeat: no-repeat;
+  width: var(--space-500);
+  height: var(--space-500);
+  display: block;
+}
+.faq__list {
+  margin-block-start: var(--space-125);
+}
+
+details {
+  padding-block: var(--space-300);
+}
+details[open] summary::after {
+  background-image: url("/icon-minus.svg");
+}
+
+summary {
+  font-size: var(--space-225);
+  font-weight: var(--font-semibold);
+  line-height: 1.16;
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-200);
+}
+@media (width <= 40em) {
+  summary {
+    font-size: var(--space-200);
+  }
+}
+summary:hover {
+  color: var(--violet-600);
+}
+summary::marker {
+  content: "";
+  display: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::after {
+  content: "";
+  width: 1.875rem;
+  height: 1.875rem;
+  display: block;
+  background-image: url("/icon-plus.svg");
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+p {
+  font-size: var(--space-200);
+  font-weight: var(--font-regular);
+  line-height: 1.5;
+  color: var(--purple-600);
+  padding-block-start: var(--space-300);
+}
+@media (width <= 40em) {
+  p {
+    font-size: var(--space-175);
+  }
+}
+
+hr {
+  height: var(--space-12);
+  background-color: var(--purple-100);
+  border: 0;
+}
+
+main {
+  max-width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-300);
+  place-content: center;
+  position: relative;
+}
+main::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 20rem;
+  background-color: var(--purple-950);
+  background-image: url("/background-pattern-desktop.svg");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+@media (width <= 40em) {
+  main::before {
+    background-image: url("/background-pattern-mobile.svg");
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

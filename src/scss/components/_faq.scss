@@ -1,0 +1,102 @@
+@use "../utils" as *;
+
+.faq {
+  max-width: 37.5rem;
+  padding: var(--space-500);
+  border-radius: var(--space-200);
+  background-color: var(--white);
+  box-shadow: 0 0 var(--space-700) hsla(281, 100%, 23%, 0.1);
+
+  @include mq(s) {
+    padding: var(--space-300);
+  }
+
+  h1 {
+    @include preset(1);
+    display: flex;
+    gap: var(--space-300);
+    align-items: center;
+
+    @include mq(s) {
+      font-size: 2rem;
+    }
+
+    &::before {
+      content: "";
+      background-image: url("/icon-star.svg");
+      background-repeat: no-repeat;
+      width: var(--space-500);
+      height: var(--space-500);
+      display: block;
+    }
+  }
+
+  &__list {
+    margin-block-start: var(--space-125);
+  }
+}
+
+details {
+  padding-block: var(--space-300);
+
+  &[open] {
+    summary {
+      &::after {
+        background-image: url("/icon-minus.svg");
+      }
+    }
+  }
+}
+
+summary {
+  @include preset(2);
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-200);
+
+  @include mq(s) {
+    font-size: var(--space-200);
+  }
+
+  &:hover {
+    color: var(--violet-600);
+  }
+
+  &::marker {
+    content: "";
+    display: none;
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    width: 1.875rem;
+    height: 1.875rem;
+    display: block;
+    background-image: url("/icon-plus.svg");
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+  }
+}
+
+p {
+  @include preset(3);
+  color: var(--purple-600);
+  padding-block-start: var(--space-300);
+
+  @include mq(s) {
+    font-size: var(--space-175);
+  }
+}
+
+hr {
+  height: var(--space-12);
+  background-color: var(--purple-100);
+  border: 0;
+}

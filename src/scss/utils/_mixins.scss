@@ -1,0 +1,48 @@
+@use "variables" as *;
+@use "sass:map";
+
+/* Media Queries */
+
+@mixin mq($breakpoint) {
+  @if $breakpoint == s {
+    @media (width <= 40em) {
+      @content;
+    }
+  } @else if $breakpoint == m {
+    @media (width <= 60em) {
+      @content;
+    }
+  }
+}
+
+/* Typography */
+
+$preset-styles: (
+  1: (
+    font-size: var(--space-700),
+    font-weight: var(--font-bold),
+    line-height: 1.18,
+  ),
+  2: (
+    font-size: var(--space-225),
+    font-weight: var(--font-semibold),
+    line-height: 1.16,
+  ),
+  3: (
+    font-size: var(--space-200),
+    font-weight: var(--font-regular),
+    line-height: 1.5,
+  ),
+);
+
+@mixin preset($n) {
+  $preset: map.get($preset-styles, $n);
+
+  @if $preset {
+    font-family: map.get($preset, font-family);
+    font-size: map.get($preset, font-size);
+    font-weight: map.get($preset, font-weight);
+    line-height: map.get($preset, line-height);
+    letter-spacing: map.get($preset, letter-spacing);
+  }
+}
