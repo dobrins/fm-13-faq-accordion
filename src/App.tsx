@@ -1,4 +1,4 @@
-import FaqItem from "./components/faqItem";
+import FaqItem from "./components/FaqItem";
 import data from "./data/data.json";
 
 function App() {

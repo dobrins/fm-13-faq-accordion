@@ -4,7 +4,7 @@ interface PassedProps {
   opened?: boolean;
 }
 
-const faqItem = ({ summary, text, opened }: PassedProps) => {
+const FaqItem = ({ summary, text, opened }: PassedProps) => {
   return (
     <details
       name="faq"
@@ -15,4 +15,4 @@ const faqItem = ({ summary, text, opened }: PassedProps) => {
   );
 };
 
-export default faqItem;
+export default FaqItem;
